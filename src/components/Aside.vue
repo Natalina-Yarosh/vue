@@ -12,7 +12,7 @@ const count = ref(0)
 
   <div class="main-info">
     <div class="main-info__wrap-img">
-      <img class="main-info__img" src='../assets/image.png' alt="user image">
+      <img class="main-info__img" :src='userImage' alt="user image">
     </div>
     <h1>{{ userName }}</h1>
     <p>{{ userMainInfo }}</p>
@@ -247,6 +247,7 @@ export default {
   data() {
     return {
       id: 'natali',
+      userImage: 'src/assets/image.png',
       infos: [
         {
           id: 'email',
