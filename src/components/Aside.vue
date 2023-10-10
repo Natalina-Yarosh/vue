@@ -103,7 +103,7 @@ export default {
           id: 'website',
           name: 'Website',
           icon: 'src/assets/aside/website.svg',
-          link: `<a href="https://anuragyadav365.github.io/portfolio.html">https://anuragyadav365.github.io/portfolio.html</a>`,
+          link: `<a href="https://github.com/Natalina-Yarosh/vue.git">https://github.com/Natalina-Yarosh/vue.git</a>`,
           isUnderline: true,
         },
         {
