@@ -24,14 +24,14 @@ export default {
       certificates: [
         {
           id: 'tms',
-          image: '../../public/assets/certificates/1.svg',
+          image: 'assets/certificates/1.svg',
           name: 'TeachMeSkills',
           description: 'Front End developer',
           years: 'Dec 2018 - Sept 2019',
         },
         {
           id: 'udemy',
-          image: '../../public/assets/certificates/2.svg',
+          image: 'assets/certificates/2.svg',
           name: 'Udemy',
           description: 'Vue - The Complete Guide',
           years: 'Sept 2023 - Now'

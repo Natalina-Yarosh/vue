@@ -31,7 +31,7 @@ export default {
       projects: [
         {
           id: 'project1',
-          image: '../../public/assets/projects/1.svg',
+          image: 'assets/projects/1.svg',
           name: 'Project 1',
           description: 'Website for the clinic that is specialized in different services such as mammalogy, laser surgery, laser cosmetology, etc. The possibility to make an appointment is realized, as well as a brief overview of services, doctors, and the whole clinic.',
           linkPath: '#',
@@ -39,7 +39,7 @@ export default {
         },
         {
           id: 'project2',
-          image: '../../public/assets/projects/1.svg',
+          image: 'assets/projects/1.svg',
           name: 'Project 2',
           description: 'Web application for special event (new auto models presentation), where early birds can buy tickets and make an experiment with cars (change vehicles colors and etc.)',
           linkPath: '#',
@@ -47,7 +47,7 @@ export default {
         },
         {
           id: 'project3',
-          image: '../../public/assets/projects/1.svg',
+          image: 'assets/projects/1.svg',
           name: 'Project 3',
           description: 'Website and webshop of the famous sportswear and shoe manufacturer.',
           linkPath: '#',
@@ -55,7 +55,7 @@ export default {
         },
         {
           id: 'project4',
-          image: '../../public/assets/projects/1.svg',
+          image: 'assets/projects/1.svg',
           name: 'Project 4',
           description: 'Develop HTML templates of emails for marketing and notification campaigns of credit organization.',
           linkPath: '#',
