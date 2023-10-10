@@ -98,7 +98,7 @@ main{
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 50% 40%;
-  background-image: url(./assets/icon.svg);
+  background-image: url(../public/assets/icon.svg);
 }
 
 @media (max-width:993px) {

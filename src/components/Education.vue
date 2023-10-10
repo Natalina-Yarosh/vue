@@ -28,7 +28,7 @@ export default {
       educations: [
       {
           id: 'BNTU',
-          image: 'src/assets/education/1.svg',
+          image: '../../public/assets/education/1.svg',
           name: 'Belarusian National Technical University',
           fullname: 'Engineering Pedagogical Faculty',
           years: '2013 - 2017',

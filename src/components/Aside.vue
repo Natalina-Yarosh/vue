@@ -88,35 +88,35 @@ export default {
   data() {
     return {
       id: 'natali',
-      userImage: 'src/assets/image.jpg',
+      userImage: '../../public/assets/image.jpg',
       userName: 'Nataliya Yarosh', 
       userMainInfo: 'Website software developer using modern Shopify, Wordpress, HTML5, CSS3 and JavaScript. Creating modern, easy-to-use, user-friendly websites and applications; Building state-of-the-art, easy to use, user friendly web sites and applications.',
       infos: [
         {
           id: 'email',
           name: 'Email',
-          icon: 'src/assets/aside/email.svg',
+          icon: '../../public/assets/aside/email.svg',
           link:`<a href="mailto:natali.yarosh.sergeevna@gmail.com">natali.yarosh.sergeevna@gmail.com</a>`,
           isUnderline: false,
         },
         {
           id: 'website',
           name: 'Website',
-          icon: 'src/assets/aside/website.svg',
+          icon: '../../public/assets/aside/website.svg',
           link: `<a href="https://github.com/Natalina-Yarosh/vue.git">https://github.com/Natalina-Yarosh/vue.git</a>`,
           isUnderline: true,
         },
         {
           id: 'phone',
           name:'Phone',
-          icon: 'src/assets/aside/phone.svg',
+          icon: '../../public/assets/aside/phone.svg',
           link: `<a href="tel:(+48)881233980">(+48) 881 233 980</a>`,
           isUnderline: false,
         },
         {
           id: 'address',
           name: 'Address',
-          icon: 'src/assets/aside/address.svg',
+          icon: '../../public/assets/aside/address.svg',
           link: '<p>Poznań, Poland</p>',
           isUnderline: false,
         }
@@ -125,19 +125,19 @@ export default {
         {
           id:'instagram',
           name: 'Instagram',
-          icon: 'src/assets/aside/instagram.svg',
+          icon: '../../public/assets/aside/instagram.svg',
           link: `<a href='https://www.instagram.com/it.wwwoman'>@it.wwwoman</a>`
         },
         {
           id:'github',
           name: 'Github',
-          icon: 'src/assets/aside/github.svg',
+          icon: '../../public/assets/aside/github.svg',
           link: `<a href='https://github.com/Natalina-Yarosh' target='_blank'>@Natalina-Yarosh</a>`
         },
         {
           id:'linkedin',
           name: 'Linkedin',
-          icon: 'src/assets/aside/linkedin.svg',
+          icon: '../../public/assets/aside/linkedin.svg',
           link: `<a href='https://www.linkedin.com/in/natali-yarosh-57b61a183/' target='_blank'>Natali Yarosh</a>`,
         }
       ],
@@ -145,19 +145,19 @@ export default {
       {
           id:'spanish',
           name: 'Spanish',
-          icon: 'src/assets/aside/spanish.svg',
+          icon: '../../public/assets/aside/spanish.svg',
           info: 'Elementary'
         },
         {
           id:'english',
           name: 'English',
-          icon: 'src/assets/aside/english.svg',
+          icon: '../../public/assets/aside/english.svg',
           info: 'Intermediate'
         },
         {
           id:'polish',
           name: 'Polish',
-          icon: 'src/assets/aside/polish.png',
+          icon: '../../public/assets/aside/polish.png',
           info: 'Intermediate'
         }
       ],
@@ -165,17 +165,17 @@ export default {
         {
           id:'teaching',
           name: 'Teaching',
-          icon: 'src/assets/aside/gaming.svg',
+          icon: '../../public/assets/aside/gaming.svg',
         },
         {
           id:'travelling',
           name: 'Travelling',
-          icon: 'src/assets/aside/travelling.svg',
+          icon: '../../public/assets/aside/travelling.svg',
         },
         {
           id:'blogging',
           name: 'Blogging',
-          icon: 'src/assets/aside/blogging.svg',
+          icon: '../../public/assets/aside/blogging.svg',
         },
       ],
       productionDetails: {
