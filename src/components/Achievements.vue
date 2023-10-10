@@ -37,7 +37,7 @@ export default {
         {
           id: 'plavno',
           years: 'Sept 2019 - Now',
-          image: 'assets/achievements/1.svg',
+          image: '/assets/achievements/1.svg',
           contributor: 'Contributor',
           name: 'Plavno',
           description: 'Contributed 12 PR’s in various open source projects. Great experience and learning alot about working with Github. Connecting with developers',
