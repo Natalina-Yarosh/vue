@@ -1,5 +1,4 @@
 <template>
-  <div class="item">
     <h2 class="item__title">{{ title }}</h2>
       <ul class="certificates">
         <li class="certificate" v-for="certificate in certificates" :key="certificate.id">
@@ -13,7 +12,6 @@
             <p class="certificate__years">{{ certificate.years }}</p>
         </li>
     </ul>
-  </div>
 </template>
 
 <script>

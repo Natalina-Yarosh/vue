@@ -13,16 +13,30 @@ import Certificates from './components/Certificates.vue';
       <Aside />
     </div>
     <div class="info">
-       <Education />
-       <Achievements />
-       <Tools />
-       <Projects />
-       <Certificates />
+      <div class="item">
+        <Education />
+      </div>
+       
+       <div class="item">
+        <Achievements />
+       </div>
+       <div class="item">
+        <Tools />
+        </div>
+       <div class="item">
+        <Projects />
+       </div>
+       <div class="item">
+        <Certificates />
+       </div>
     </div>
   </main>
 </template>
 
 <style scoped>
+.item{
+  margin-bottom: 24px;
+}
 
 main{
   display: grid;

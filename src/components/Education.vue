@@ -1,23 +1,21 @@
 <template>
-  <div class="item">
-    <h2 class="item__title">{{ title }}</h2>
-      <ul class="educations">
-        <li class="education" v-for="education in educations" :key="education.id">
-          <div class="education__head">
-            <div class="education__wrap-img">
-              <img :src="education.image" :alt="education.name">
-            </div>
-            <p class="education__name">{{ education.name }}</p>
+  <h2 class="item__title">{{ title }}</h2>
+    <ul class="educations">
+      <li class="education" v-for="education in educations" :key="education.id">
+        <div class="education__head">
+          <div class="education__wrap-img">
+            <img :src="education.image" :alt="education.name">
           </div>
-          <h3 class="education__fullname">{{ education.fullname }}</h3>
-          <p class="education__years">{{ education.years }}</p>
-          <p class="education__info">
-            <span class="education__percentage">Percentage - </span>
-            {{ education.percentage }}
-          </p>
-        </li>
-    </ul>
-  </div>
+          <p class="education__name">{{ education.name }}</p>
+        </div>
+        <h3 class="education__fullname">{{ education.fullname }}</h3>
+        <p class="education__years">{{ education.years }}</p>
+        <p class="education__info">
+          <span class="education__percentage">Percentage - </span>
+          {{ education.percentage }}
+        </p>
+      </li>
+  </ul>
 </template>
 
 <script>
@@ -43,9 +41,6 @@ export default {
 
 
 <style scoped>
-.item{
-  margin-bottom: 24px;
-}
 
 .item__title{
   color: #2E2E48;

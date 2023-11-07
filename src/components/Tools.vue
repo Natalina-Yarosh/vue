@@ -1,16 +1,14 @@
 <template>
-  <div class="item">
-    <h2 class="item__title">{{ title }}</h2>
-      <ul class="tools">
-        <li class="tool" v-for="tool in tools" :key="tool.id">
-            <div class="tool__wrap-img">
-              <img :src="tool.image" :alt="tool.name">
-            </div>
-            <p class="tool__name">{{ tool.name }}</p>
-            <p class="tool__description">{{ tool.description }}</p>
-        </li>
-    </ul>
-  </div>
+  <h2 class="item__title">{{ title }}</h2>
+    <ul class="tools">
+      <li class="tool" v-for="tool in tools" :key="tool.id">
+          <div class="tool__wrap-img">
+            <img :src="tool.image" :alt="tool.name">
+          </div>
+          <p class="tool__name">{{ tool.name }}</p>
+          <p class="tool__description">{{ tool.description }}</p>
+      </li>
+  </ul>
 </template>
 
 <script>
@@ -70,10 +68,6 @@ export default {
 
 
 <style scoped>
-.item{
-  margin-bottom: 24px;
-}
-
 .item__title{
   color: #2E2E48;
   font-size: 23px;
