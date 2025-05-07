@@ -1,195 +1,114 @@
 <template>
   <h2 class="item__title">{{ title }}</h2>
-    <ul class="tools">
-      <li class="tool" v-for="tool in tools" :key="tool.id">
-          <div class="tool__wrap-img">
-            <img :src="tool.image" :alt="tool.name">
-          </div>
-          <p class="tool__name">{{ tool.name }}</p>
-          <p class="tool__description">{{ tool.description }}</p>
-      </li>
-  </ul>
+  
+  <div class="skills-container" v-for="category in toolsCategories" :key="category.id">
+    <h3 class="skills-category">{{ category.category }}</h3>
+    
+    <div class="skills">
+      <div class="skill" v-for="(skill, index) in category.skills" :key="index">
+        <div class="skill__header">
+          <span class="skill__name">{{ skill.name }}</span>
+          <span class="skill__level">{{ skill.level }}%</span>
+        </div>
+        <div class="skill__bar">
+          <div class="skill__progress" :style="{ width: `${skill.level}%` }"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      title: 'Tools/Skills',
-      tools: [
-        {
-          id: 'html',
-          image: '/assets/tools/3.png',
-          name: 'HTML 5',
-          description: 'Structural Design',
-        },
-        {
-          id: 'css',
-          image: '/assets/tools/4.png',
-          name: 'CSS 3',
-          description: 'Style Design',
-        },
-        {
-          id: 'js',
-          image: '/assets/tools/9.png',
-          name: 'Java script',
-          description: 'Scripting language',
-        },
-        {
-          id: 'wordpress',
-          image: '/assets/tools/5.png',
-          name: 'Wordpress',
-          description: 'Web development',
-        },
-        {
-          id: 'shopify',
-          image: '/assets/tools/8.png',
-          name: 'Shopify',
-          description: 'Web development',
-        },
-        {
-          id: 'vscode',
-          image: '/assets/tools/6.png',
-          name: 'VS Code',
-          description: 'Code editor',
-        },
-        {
-          id: 'figma',
-          image: '/assets/tools/1.svg',
-          name: 'Figma',
-          description: ' UI Design, prototyping',
-        },
-      ],
-    };
-  },
-};
+<script setup>
+import { ref, onMounted } from 'vue';
+import toolsData from '../data/tools.js';
 
+const title = ref('Skills & Tools');
+const toolsCategories = ref(toolsData);
+
+
+onMounted(() => {
+  const progressBars = document.querySelectorAll('.skill__progress');
+  
+ 
+  progressBars.forEach(bar => {
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+  });
+  
+  
+  setTimeout(() => {
+    progressBars.forEach(bar => {
+      bar.style.transition = 'width 1s ease-in-out';
+      bar.style.width = bar.getAttribute('style').split(':')[1];
+    });
+  }, 300);
+});
 </script>
 
-
 <style scoped>
-.item__title{
-  color: #2E2E48;
-  font-size: 23px;
+.skills-container {
+  margin-bottom: 30px;
+}
+
+.skills-container:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: var(--font-heading, 'Outfit'), sans-serif;
+  font-size: var(--font-size-md, 16px);
+  color: var(--color-text-dark, #2E2E48);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.skill__name {
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
   font-weight: 500;
-  line-height: 1; 
-  letter-spacing: 0.12px;
-  margin-bottom: 20px;
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-text-dark, #2E2E48);
 }
 
-.tools{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-
-  @media (max-width:767px) {
-    gap: 10px;
-  }
+.skill__level {
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-xs, 12px);
+  color: var(--color-text-light, #47516B);
 }
 
-.tool:nth-child(-n+3){
-  width: calc((100% - 40px) / 3);
-
-  @media (max-width:767px) {
-    width: calc((100% - 10px) / 2);
-  }
-}
-
-.tool{
-  width: calc((100% - 60px) / 4);
-  background: #F7F9FC;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
-  padding: 20px;
-
-  @media (max-width:767px) {
-    width: calc((100% - 10px) / 2);
-  }
-}
-.tool:first-child{
-  border-radius: 10px 0 0 0;
-
-  @media (max-width:767px) {
-    border-radius: 0;
-  }
-}
-.tool:nth-child(3){
-  border-radius: 0 10px 0 0 ;
-
-  @media (max-width:767px) {
-    border-radius: 0;
-  }
-}
-
-.tool:nth-last-child(4){
-  border-radius: 0 0 0 10px;
-
-  @media (max-width:767px) {
-    border-radius: 0;
-  }
-}
-
-.tool:first-child{
-  border-radius: 10px 0 0 0;
-
-  @media (max-width:767px) {
-    border-radius: 0;
-  }
-}
-
-.tool:last-child{
-  border-radius:  0 0 10px 0;
-
-  @media (max-width:767px) {
-    border-radius: 0;
-  }
-}
-
-.tool__wrap-img{
+.skill__bar {
+  height: 6px;
   width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width:1025px) {
-    height: 70px;
-  }
+  background-color: var(--color-bg-light, #F7F9FC);
+  border-radius: 3px;
+  overflow: hidden;
 }
 
-.tool__wrap-img img{
-  width: 100%;
+.skill__progress {
   height: 100%;
-  object-fit: scale-down;
+  background-color: var(--color-primary, #516CF7);
+  border-radius: 3px;
+  width: 0%; /* Начальное значение для анимации */
 }
 
-.tool__name {
-  width: 100%;
-  text-align: center;
-  color: #2E2E47;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.tool__description {
-  color: #79819A;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.05px;
-  text-align: center;
-
-  @media (max-width:767px) {
-    font-size: 14px;
+@media (max-width: 767px) {
+  .skills {
+    grid-template-columns: 1fr;
   }
 }
-
 </style>

@@ -1,22 +1,19 @@
 <template>
-
   <div class="main-info divider">
     <div class="main-info__wrap-img">
-      <img class="main-info__img" :src='userImage' alt="user image">
+      <img class="main-info__img" :src='userInfo.image' :alt="`Фото ${userInfo.name}`">
     </div>
-    <h1 class="main-info__title">{{ userName }}</h1>
-    <p class="main-info__text">{{ userMainInfo }}</p>
+    <h1 class="main-info__title">{{ userInfo.name }}</h1>
+    <p class="main-info__text">{{ userInfo.mainInfo }}</p>
   </div>
 
   <ul class="info divider">
-    <li class="info__item" v-for="info in infos" :key='info.id'>
+    <li class="info__item" v-for="info in contactInfo" :key='info.id'>
       <div class="info__wrap-img">
         <img :src="info.icon" :alt="info.name">
       </div>
       <div class="info__wrap-text">
-        <p class="info__text">
-          {{ info.name}}
-        </p>
+        <p class="info__text">{{ info.name }}</p>
         <div :class="[ {underline: info.isUnderline}, 'info__link' ]" v-html="info.link"></div>
       </div>
     </li>
@@ -25,14 +22,12 @@
   <div class="socials divider"> 
     <p class="info__title">Socials</p>
     <ul class="info">
-      <li class="info__item" v-for="social in socials" :key='social.id'>
+      <li class="info__item" v-for="social in socialLinks" :key='social.id'>
         <div :class="[social.id, 'info__wrap-img']">
           <img :src="social.icon" :alt="social.name">
         </div>
         <div class="info__wrap-text">
-          <p class="info__text">
-            {{ social.name}}
-          </p>
+          <p class="info__text">{{ social.name }}</p>
           <div class="info__link" v-html="social.link"></div>
         </div>
       </li>
@@ -42,31 +37,13 @@
   <div class="languages divider">
     <p class="info__title">Languages</p>
     <ul class="info">
-      <li class="info__item" v-for="language in languages" :key="language.id">
+      <li class="info__item" v-for="language in languagesList" :key="language.id">
         <div class="info__wrap-img">
           <img :src="language.icon" :alt="language.name">
         </div>
         <div class="info__wrap-text">
-          <p class="info__text">
-            {{ language.name}}
-          </p>
+          <p class="info__text">{{ language.name }}</p>
           <p class="info__link">{{ language.info }}</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="hobbies divider">
-    <p class="info__title">Hobbies & Interests</p>
-    <ul class="info">
-      <li class="info__item" v-for="hobby in hobbies" :key="hobby.id">
-        <div class="info__wrap-img">
-          <img :src="hobby.icon" :alt="hobby.name">
-        </div>
-        <div class="info__wrap-text">
-          <p class="info__text">
-            {{ hobby.name}}
-          </p>
         </div>
       </li>
     </ul>
@@ -75,318 +52,151 @@
   <div class="personal-details">
     <p class="info__title">Personal Details</p>
     <ul class="info"> 
-      <li class="info__details-item" v-for="(productionDetail, name) in productionDetails" :key="name">
-        <span class="info__details-name">{{name}}:</span> {{productionDetail}}
+      <li class="info__details-item" v-for="(detail, name) in personalDetails" :key="name">
+        <span class="info__details-name">{{name}}:</span> {{detail}}
       </li>
     </ul>
   </div>
-
+  
+  <Education />
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      id: 'natali',
-      userImage: '/assets/image.jpg',
-      userName: 'Nataliya Yarosh', 
-      userMainInfo: 'Website software developer using modern Shopify, Wordpress, HTML5, CSS3 and JavaScript. Creating modern, easy-to-use, user-friendly websites and applications; Building state-of-the-art, easy to use, user friendly web sites and applications.',
-      infos: [
-        {
-          id: 'email',
-          name: 'Email',
-          icon: '/assets/aside/email.svg',
-          link:`<a href="mailto:natali.yarosh.sergeevna@gmail.com">natali.yarosh.sergeevna@gmail.com</a>`,
-          isUnderline: false,
-        },
-        {
-          id: 'website',
-          name: 'Website',
-          icon: '/assets/aside/website.svg',
-          link: `<a href="https://github.com/Natalina-Yarosh/vue.git">https://github.com/Natalina-Yarosh/vue.git</a>`,
-          isUnderline: true,
-        },
-        {
-          id: 'phone',
-          name:'Phone',
-          icon: '/assets/aside/phone.svg',
-          link: `<a href="tel:(+48)881233980">(+48) 881 233 980</a>`,
-          isUnderline: false,
-        },
-        {
-          id: 'address',
-          name: 'Address',
-          icon: '/assets/aside/address.svg',
-          link: '<p>Poznań, Poland</p>',
-          isUnderline: false,
-        }
-      ],
-      socials: [
-        {
-          id:'instagram',
-          name: 'Instagram',
-          icon: '/assets/aside/instagram.svg',
-          link: `<a href='https://www.instagram.com/it.wwwoman'>@it.wwwoman</a>`
-        },
-        {
-          id:'github',
-          name: 'Github',
-          icon: '/assets/aside/github.svg',
-          link: `<a href='https://github.com/Natalina-Yarosh' target='_blank'>@Natalina-Yarosh</a>`
-        },
-        {
-          id:'linkedin',
-          name: 'Linkedin',
-          icon: '/assets/aside/linkedin.svg',
-          link: `<a href='https://www.linkedin.com/in/natali-yarosh-57b61a183/' target='_blank'>Natali Yarosh</a>`,
-        }
-      ],
-      languages:[
-      {
-          id:'spanish',
-          name: 'Spanish',
-          icon: '/assets/aside/spanish.svg',
-          info: 'Elementary'
-        },
-        {
-          id:'english',
-          name: 'English',
-          icon: '/assets/aside/english.svg',
-          info: 'Intermediate'
-        },
-        {
-          id:'polish',
-          name: 'Polish',
-          icon: '/assets/aside/polish.png',
-          info: 'Intermediate'
-        }
-      ],
-      hobbies:[
-        {
-          id:'teaching',
-          name: 'Teaching',
-          icon: '/assets/aside/gaming.svg',
-        },
-        {
-          id:'travelling',
-          name: 'Travelling',
-          icon: '/assets/aside/travelling.svg',
-        },
-        {
-          id:'blogging',
-          name: 'Blogging',
-          icon: '/assets/aside/blogging.svg',
-        },
-      ],
-      productionDetails: {
-          'Mother’s Name': 'Tatyana Yarosh',
-          'Father’s Name': 'Sergey Yarosh',
-          'D.O.B.': '23 - 04 - 1996',
-      }
-    };
-  },
-};
+<script setup>
+import { ref } from 'vue';
+import contactInfo from '../data/contact.js';
+import socialLinks from '../data/social.js';
+import languagesList from '../data/languages.js';
+import personalDetails from '../data/personalDetails.js';
+import Education from './Education.vue'
 
+// Основная информация о пользователе
+const userInfo = ref({
+  id: 'natali',
+  image: '/assets/image.jpg',
+  name: 'Nataliya Yarosh', 
+  mainInfo: 'Website software developer using modern Shopify, Wordpress, HTML5, CSS3 and JavaScript. Creating modern, easy-to-use, user-friendly websites and applications; Building state-of-the-art, easy to use, user friendly web sites and applications.'
+});
 </script>
 
 <style scoped>
-.divider{
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 0.5px solid #E2E6EE;
-}
-
-.underline{
-  text-decoration: underline;
-}
-
+/* Стили для основной информации */
 .main-info{
-  text-align: left;
-
-  @media (max-width:870px) {
-    grid-column: 1/3;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
 }
+
 .main-info__wrap-img{
+  padding: 5px;
+  border-radius: 20px;
+  background-color: var(--color-bg-white, #fff);
   width: 100px;
   height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 .main-info__img{
-  object-fit: cover;
-  object-position: center;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .main-info__title{
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1; 
-  letter-spacing: -0.32px;
-  margin-bottom: 30px;
-  color: #2E2E48;
-
-  @media (max-width:1025px) {
-    font-size: 25px;
-    margin-bottom: 25px;
-  }
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-family: var(--font-heading, 'Outfit'), sans-serif;
+  font-size: var(--font-size-xl, 23px);
+  color: var(--color-text-dark, #2E2E48);
 }
 
 .main-info__text{
-  color:  #47516B;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px; 
-  letter-spacing: 0.18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-sm, 14px);
+  line-height: 1.4;
+  color: var(--color-text-light, #47516B);
+}
+
+/* Стили для прочей информации */
+.divider{
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--color-border, #E2E6EE);
 }
 
 .info{
+  margin: 0;
+  padding: 0;
   list-style: none;
-  text-align: left;
-  display: grid;
-  row-gap: 20px;
-}
-
-.info__item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  column-gap: 15px;
-  align-items: center;
-
-  @media (max-width:1025px) {
-    column-gap: 10px;
-  }
-}
-
-.info__wrap-img {
-  width: 40px;
-  height: 40px;
-  background-color: #E2E6EE;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  object-fit: cover;
-}
-
-.info__wrap-img img{
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
-  object-position: center;
-}
-
-.info__text {
-  color: #79819A;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.06px;
-  margin-bottom: 5px;
-  font-family: 'DM Sans', sans-serif;
-
-  @media (max-width:1025px) {
-    font-size: 16px;
-  }
-}
-
-.info__link{
-  color:  #47516B;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 18px; 
-  font-family: 'DM Sans', sans-serif;
-
-  @media (max-width:1025px) {
-    font-size: 16px;
-  }
 }
 
 .info__title{
-  color:  #79819A;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1; 
-  letter-spacing: 0.06px;
-  margin-bottom: 20px;
-
-  @media (max-width:1025px) {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: var(--font-heading, 'Outfit'), sans-serif;
+  font-size: var(--font-size-md, 16px);
+  color: var(--color-text-dark, #2E2E48);
 }
 
-.personal-details .info{
-  row-gap: 10px;
+.info__item{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: flex-start;
+  margin-bottom: 15px;
 }
 
-.info__details-item{
-  color: #989FB2;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1;
-  font-family: 'DM Sans', sans-serif;
+.info__wrap-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.info__details-name{
-  color: #100F0F;
+.info__text{
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-weight: 600;
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-text-dark, #2E2E48);
 }
 
-.socials .instagram {
-  background: radial-gradient(78.13% 78.13% at 50% 96.88%, rgba(140, 58, 170, 0.00) 71.35%, rgba(140, 58, 170, 0.20) 100%), radial-gradient(126.96% 126.96% at 6.47% 97.81%, #FA8F21 9%, #D82D7E 78%);
+.info__link{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-sm, 14px);
+  line-height: 1.3;
+  color: var(--color-text-light, #47516B);
 }
 
-.socials .github{
-  background:  #FFF;
+.info__link a{
+  color: var(--color-text-light, #47516B);
+  text-decoration: none;
 }
 
-.socials .twitter{
-  background:  #00ACEE;
-}
-
-.socials .linkedin{
-  background:  #0077B5;
-}
-
-.socials .info__link {
+.underline a{
   text-decoration: underline;
 }
 
-.languages .info__wrap-img,
-.hobbies .info__wrap-img{
-  background: transparent;
+.info__details-item{
+  margin-bottom: 10px;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-text-light, #47516B);
 }
 
-.languages .info__wrap-img img{
-  width: 100%;
-  height: auto;
-  border-radius: 2px;
+.info__details-name{
+  font-weight: 600;
+  color: var(--color-text-dark, #2E2E48);
 }
 
-.languages .info__text{
-  font-weight: 500;
-}
-
-.languages .info__link{
-  font-weight: 400;
-}
-
-.hobbies .info__text{
-  margin-bottom: 0;
-  font-weight: 500;
-}
-
-.hobbies .info__wrap-img img{
-  width: 90%;
-  height: auto;
-}
-
-.hobbies .info{
-  row-gap: 8px;
+@media (max-width: 870px){
+  .info__item{
+    grid-template-columns: 10% 90%;
+  }
 }
 </style>

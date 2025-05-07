@@ -1,163 +1,106 @@
 <template>
   <h2 class="item__title">{{ title }}</h2>
-    <ul class="educations">
-      <li class="education" v-for="education in educations" :key="education.id">
-        <div class="education__head">
-          <div class="education__wrap-img">
-            <img :src="education.image" :alt="education.name">
-          </div>
-          <p class="education__name">{{ education.name }}</p>
-        </div>
-        <h3 class="education__fullname">{{ education.fullname }}</h3>
-        <p class="education__years">{{ education.years }}</p>
-        <p class="education__info">
-          <span class="education__percentage">Percentage - </span>
-          {{ education.percentage }}
-        </p>
-      </li>
+  <ul class="timeline">
+    <li class="timeline__item" v-for="education in educationList" :key="education.id">
+      <div class="timeline__wrap">
+        <h3 class="timeline__title">{{ education.title }}</h3>
+        <p class="timeline__organization">{{ education.institution }}</p>
+        <p class="timeline__period">{{ education.period }}</p>
+        <p class="timeline__description">{{ education.description }}</p>
+      </div>
+    </li>
   </ul>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      title: 'Education',
-      educations: [
-      {
-          id: 'BNTU',
-          image: '/assets/education/1.svg',
-          name: 'Belarusian National Technical University',
-          fullname: 'Engineering Pedagogical Faculty',
-          years: '2013 - 2017',
-          percentage: '98%',
-        },
-      ],
-    };
-  },
-};
+<script setup>
+import { ref } from 'vue';
+import educationData from '../data/education.js';
 
+const title = ref('Education');
+const educationList = ref(educationData);
 </script>
 
-
 <style scoped>
-
-.item__title{
-  color: #2E2E48;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 1; 
-  letter-spacing: 0.12px;
-  margin-bottom: 20px;
-}
-
-.educations{
+.timeline {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
-  @media (max-width:1025px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width:767px) {
-    grid-template-columns: 1fr;
-  }
+  position: relative;
 }
 
-.education{
-  padding: 16px 24px;
-  background:  #F7F9FC;
-
-  @media (max-width:767px){
-    padding: 14px 18px;
-  }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: -45px;
+  top: 10px;
+  height: calc(100% - 20px);
+  width: 2px;
+  background-color: var(--color-border, #E2E6EE);
 }
 
-.education:first-child{
-  border-radius: 4px 0 0  4px;
-}
-.education:last-child{
-  border-radius: 0 4px 4px 0;
+.timeline__item {
+  position: relative;
+  margin-bottom: 25px;
 }
 
-.education__head {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  column-gap: 8px;
-  align-items: center;
-  margin-bottom: 10px;
+.timeline__item:last-child {
+  margin-bottom: 0;
 }
 
-.education__wrap-img {
-  width: 100%;
-  display: flex;
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary, #516CF7);
 }
 
-.education__wrap-img img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
+.timeline__wrap {
+  background-color: var(--color-bg-light, #F7F9FC);
+  padding: 20px;
+  border-radius: 8px;
+  transition: var(--transition-normal, all 0.3s ease);
 }
 
-.education__name {
-  font-family: 'DM Sans', sans-serif;
-  color: #2E2E48;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 21px;
-
-  @media (max-width:767px){
-    font-size: 15px;
-    line-height: 17px;
-  }
+.timeline__wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
-.education__fullname {
-  color: #2E2E48;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-  font-family: 'DM Sans', sans-serif;
-  margin-bottom: 6px;
-
-  @media (max-width:767px){
-    font-size: 16px;
-    line-height: 18px;
-  }
-}
-
-.education__years {
-  color: #79819A;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.05px;
+.timeline__title {
+  margin-top: 0;
   margin-bottom: 5px;
-
-  @media (max-width:767px){
-    font-size: 14px;
-  }
+  font-family: var(--font-heading, 'Outfit'), sans-serif;
+  font-size: var(--font-size-md, 16px);
+  color: var(--color-text-dark, #2E2E48);
 }
 
-.education__info {
-  color: #79819A;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.06px;
-
-  @media (max-width:767px){
-    font-size: 14px;
-  }
+.timeline__organization {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-weight: 600;
+  font-size: var(--font-size-sm, 14px);
+  color: var(--color-primary, #516CF7);
 }
 
-.education__percentage{
-  color:  #5D5FEF;
+.timeline__period {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-xs, 12px);
+  color: var(--color-text-light, #47516B);
+}
+
+.timeline__description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font-body, 'DM Sans'), sans-serif;
+  font-size: var(--font-size-sm, 14px);
+  line-height: 1.4;
+  color: var(--color-text-light, #47516B);
 }
 </style>
