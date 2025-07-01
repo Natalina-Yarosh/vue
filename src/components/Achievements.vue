@@ -34,11 +34,35 @@ export default {
       achievements: [
         {
           id: 'plavno',
-          years: 'Sept 2019 - Now',
+          years: 'Sept 2022 - Now',
           image: '/assets/achievements/1.svg',
-          contributor: 'Contributor',
+          contributor: 'Frontend-developer',
           name: 'Plavno',
-          description: 'Contributed 12 PR’s in various open source projects. Great experience and learning alot about working with Github. Connecting with developers',
+          description: 'Developed dynamic user interfaces using Vue.js 3 (Options API/Composition API) with TypeScript, ensuring type safety and maintainability. Built reactive SPAs solutions with Vue Router and state management (Pinia/Vuex), typed with TypeScript interfaces. Delivered adaptive, cross-browser UIs with CSS3/SCSS, Tailwind CSS,  component libraries (Vuetify), ensuring pixel-perfect designs. Optimized application performance through lazy loading, caching strategies, and virtualized lists (vue-virtual-scroller). Technologies: Vue 3, TypeScript, Pinia, Vue Router, Vitest, SCSS, Tailwind/Vuetify, Git.',
+        },
+        {
+          id: 'abiatec',
+          years: 'Sept 2019 - Sept 2022',
+          image: '/assets/achievements/2.jpeg',
+          contributor: 'Frontend-developer',
+          name: 'Abiatec',
+          description: 'Developed responsive and interactive web interfaces using HTML5, CSS3 (SCSS), JavaScript (ES6+) and jQuery, ensuring cross-browser compatibility and mobile-first approach. Customized and built Shopify themes using Liquid templating language, JavaScript and CSS to enhance e-commerce functionality and user experience. Developed and maintained WordPress websites, creating custom themes and plugins with PHP, JavaScript and jQuery. Technologies: SCSS/LESS, Tailwind,Bootstrap, JavaScript (ES6+), jQuery, HTML5, CSS3/SCSS, Shopify (Liquid), WordPress (PHP), REST APIs, Git.',
+        },
+        {
+          id: 'teachMeScills',
+          years: 'Sept 2020 - now',
+          image: '/assets/achievements/3.png',
+          contributor: 'IT consultant',
+          name: 'TeachMeScills',
+          description: 'Online IT consultations according to the program Front end Developer.',
+        },
+        {
+          id: 'robolab',
+          years: 'Sept 2017 - Aug 2019',
+          image: '/assets/achievements/4.png',
+          contributor: 'IT consultant',
+          name: 'Pobolab',
+          description: 'Conducting classes using construction kits LEGO.',
         },
       ],
     };
@@ -144,7 +168,7 @@ export default {
 .achievement__wrap-img img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
   object-position: center;
 }
 

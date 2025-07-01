@@ -15,7 +15,7 @@
                 <path d="M2.89532 6.48385C2.26339 6.48385 1.69369 6.10319 1.45182 5.51939C1.20995 4.93558 1.34355 4.26356 1.79032 3.81666L2.45344 3.15353L2.89532 3.59541L2.23251 4.25822C1.99565 4.49508 1.90315 4.8403 1.98984 5.16385C2.07654 5.4874 2.32926 5.74013 2.65281 5.82682C2.97636 5.91352 3.32159 5.82101 3.55844 5.58416L4.22126 4.92134L4.66313 5.36353L4.00032 6.02635C3.70784 6.32026 3.30996 6.48499 2.89532 6.48385ZM3.11626 5.14228L2.67438 4.70041L4.88407 2.49072L5.32594 2.93259L3.11657 5.14197L3.11626 5.14228ZM5.54719 4.47947L5.10501 4.03759L5.76782 3.37478C6.0079 3.13864 6.10288 2.79186 6.01664 2.46634C5.93041 2.14081 5.6762 1.88655 5.3507 1.80023C5.02519 1.71392 4.6784 1.80882 4.44219 2.04884L3.77907 2.71166L3.33719 2.26978L4.00032 1.60666C4.61128 1.00102 5.59687 1.00318 6.20518 1.61148C6.81348 2.21979 6.81564 3.20538 6.21001 3.81634L5.54719 4.47916V4.47947Z" fill="#516CF7"/>
               </svg>
             </div>
-            <a class="project__link" :href="project.Path">{{ project.linkName }}</a>
+            <a class="project__link" :href="project.linkPath" target="_blank">{{ project.linkName }}</a>
           </div>
       </li>
   </ul>
@@ -29,35 +29,68 @@ export default {
       projects: [
         {
           id: 'project1',
-          image: '/assets/projects/1.svg',
-          name: 'Project 1',
-          description: 'Website for the clinic that is specialized in different services such as mammalogy, laser surgery, laser cosmetology, etc. The possibility to make an appointment is realized, as well as a brief overview of services, doctors, and the whole clinic.',
-          linkPath: '#',
-          linkName: 'project 1',
+          image: '/assets/tools/vue.png',
+          name: 'Time tracker',
+          description: 'Time Tracker is a versatile and user-friendly application designed to help users efficiently manage their time, track activities, and monitor progress.',
+          linkPath: 'https://tracking-fawn.vercel.app/#timeline',
+          linkName: 'Show project',
         },
         {
           id: 'project2',
-          image: '/assets/projects/1.svg',
-          name: 'Project 2',
-          description: 'Web application for special event (new auto models presentation), where early birds can buy tickets and make an experiment with cars (change vehicles colors and etc.)',
-          linkPath: '#',
-          linkName: 'project 2',
+          image: '/assets/tools/vue.png',
+          name: ' Job Interview Tracker',
+          description: "Job Interview Tracker is a comprehensive application designed to help job seekers manage their interview process efficiently. Whether you're applying for multiple positions or tracking your progress with different companies, this app provides the tools needed to stay organized and informed throughout your job search journey.",
+          linkPath: 'https://vue-interviews-spsa.vercel.app/auth',
+          linkName: 'Show project',
+        },
+         {
+          id: 'project7',
+          image:'/assets/tools/vue.png',
+          name: 'Project Quote Wizard',
+          description: 'Frontend-focused web application designed to help users request project quotes by guiding them through a step-by-step form.',
+          linkPath: 'https://cheerful-swan-7fe184.netlify.app/',
+          linkName: 'Show project',
         },
         {
           id: 'project3',
-          image: '/assets/projects/1.svg',
-          name: 'Project 3',
-          description: 'Website and webshop of the famous sportswear and shoe manufacturer.',
-          linkPath: '#',
-          linkName: 'project 3',
+          image: '/assets/tools/3.png',
+          name: 'Interior Design & Furniture Store ',
+          description: 'Current implementation emphasizes frontend design and layout, it does not include backend logic or functionality such as database integration, authentication, or server-side processing.',
+          linkPath: 'https://playful-cajeta-017606.netlify.app/',
+          linkName: 'Show project',
         },
         {
           id: 'project4',
-          image: '/assets/projects/1.svg',
-          name: 'Project 4',
-          description: 'Develop HTML templates of emails for marketing and notification campaigns of credit organization.',
-          linkPath: '#',
-          linkName: 'project 4',
+          image: '/assets/tools/3.png',
+          name: 'Caped Fashion Store',
+          description: 'The project emphasizes clean, modern design and user-friendly navigation, ensuring an engaging shopping experience for visitors. This implementation is purely frontend-based , meaning it focuses solely on the visual and interactive aspects of the website without any backend logic or functionality.',
+          linkPath: 'https://heartfelt-khapse-ab1931.netlify.app/',
+          linkName: 'Show project',
+        },
+        {
+          id: 'project5',
+          image:'/assets/tools/3.png',
+          name: ' PetPaws Haven',
+          description: 'Frontend-focused website designed to provide a user-friendly and visually appealing platform for pet care services. ',
+          linkPath: 'https://animated-alfajores-0097d2.netlify.app/',
+          linkName: 'Show project',
+        },
+         {
+          id: 'project6',
+          image: '/assets/tools/3.png',
+          name: 'Creative Pixel Studio',
+          description: 'Frontend-focused website designed to showcase the services of a digital product design agency. ',
+          linkPath: 'https://regal-paprenjak-594723.netlify.app/',
+          linkName: 'Show project',
+        },
+        
+         {
+          id: 'project8',
+          image: '/assets/tools/react.png',
+          name: 'Pexels',
+          description: 'Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures.',
+          linkPath: 'https://natalina-yarosh.github.io/pexels/#/',
+          linkName: 'Show project',
         },
       ],
     };

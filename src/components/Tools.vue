@@ -17,6 +17,24 @@ export default {
     return {
       title: 'Tools/Skills',
       tools: [
+         {
+          id: 'vue',
+          image: '/assets/tools/vue.png',
+          name: 'Vue',
+          description: 'Structural Design',
+        },
+         {
+          id: 'typescript',
+          image: '/assets/tools/ts.png',
+          name: 'TypeScript',
+          description: 'Structural Design',
+        },
+        {
+          id: 'js',
+          image: '/assets/tools/9.png',
+          name: 'Java script',
+          description: 'Scripting language',
+        },
         {
           id: 'html',
           image: '/assets/tools/3.png',
@@ -30,9 +48,21 @@ export default {
           description: 'Style Design',
         },
         {
-          id: 'js',
-          image: '/assets/tools/9.png',
-          name: 'Java script',
+          id: 'sass',
+          image: '/assets/tools/sass.png',
+          name: 'Sass',
+          description: 'Scripting language',
+        },
+        {
+          id: 'jquery',
+          image: '/assets/tools/jquery.png',
+          name: 'JQuery',
+          description: 'Scripting language',
+        },
+        {
+          id: 'git',
+          image: '/assets/tools/git.png',
+          name: 'Git',
           description: 'Scripting language',
         },
         {
@@ -52,12 +82,6 @@ export default {
           image: '/assets/tools/6.png',
           name: 'VS Code',
           description: 'Code editor',
-        },
-        {
-          id: 'figma',
-          image: '/assets/tools/1.svg',
-          name: 'Figma',
-          description: ' UI Design, prototyping',
         },
       ],
     };

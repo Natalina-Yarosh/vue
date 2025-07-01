@@ -32,7 +32,14 @@ export default {
           image: '/assets/certificates/2.svg',
           name: 'Udemy',
           description: 'Vue - The Complete Guide',
-          years: 'Sept 2023 - Now'
+          years: 'Sept 2023 - Oct 2023'
+        },
+        {
+          id: 'udemy',
+          image: '/assets/certificates/2.svg',
+          name: 'Udemy',
+          description: 'Understanding TypeScript',
+          years: 'Oct 2023 - Nov 2023'
         },
       ],
     };

@@ -13,10 +13,6 @@ import Certificates from './components/Certificates.vue';
       <Aside />
     </div>
     <div class="info">
-      <div class="item">
-        <Education />
-      </div>
-       
        <div class="item">
         <Achievements />
        </div>

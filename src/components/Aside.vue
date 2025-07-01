@@ -55,32 +55,6 @@
       </li>
     </ul>
   </div>
-
-  <div class="hobbies divider">
-    <p class="info__title">Hobbies & Interests</p>
-    <ul class="info">
-      <li class="info__item" v-for="hobby in hobbies" :key="hobby.id">
-        <div class="info__wrap-img">
-          <img :src="hobby.icon" :alt="hobby.name">
-        </div>
-        <div class="info__wrap-text">
-          <p class="info__text">
-            {{ hobby.name}}
-          </p>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="personal-details">
-    <p class="info__title">Personal Details</p>
-    <ul class="info"> 
-      <li class="info__details-item" v-for="(productionDetail, name) in productionDetails" :key="name">
-        <span class="info__details-name">{{name}}:</span> {{productionDetail}}
-      </li>
-    </ul>
-  </div>
-
 </template>
 
 <script>
@@ -90,7 +64,7 @@ export default {
       id: 'natali',
       userImage: '/assets/image.jpg',
       userName: 'Nataliya Yarosh', 
-      userMainInfo: 'Website software developer using modern Shopify, Wordpress, HTML5, CSS3 and JavaScript. Creating modern, easy-to-use, user-friendly websites and applications; Building state-of-the-art, easy to use, user friendly web sites and applications.',
+      userMainInfo: 'Website software developer using modern HTML5, CSS3, and JavaScript. Creating innovative, easy-to-use, user-friendly websites and applications; building state-of-the-art web solutions that prioritize aesthetics and functionality. Proficient in frameworks and platforms such as Vue, WordPress, and Shopify.',
       infos: [
         {
           id: 'email',
@@ -100,34 +74,21 @@ export default {
           isUnderline: false,
         },
         {
-          id: 'website',
-          name: 'Website',
-          icon: '/assets/aside/website.svg',
-          link: `<a href="https://github.com/Natalina-Yarosh/vue.git">https://github.com/Natalina-Yarosh/vue.git</a>`,
-          isUnderline: true,
-        },
-        {
           id: 'phone',
           name:'Phone',
           icon: '/assets/aside/phone.svg',
-          link: `<a href="tel:(+48)881233980">(+48) 881 233 980</a>`,
+          link: `<a href="tel:(+375)257961495">(+375) 25 796 14 95</a>`,
           isUnderline: false,
         },
         {
           id: 'address',
           name: 'Address',
           icon: '/assets/aside/address.svg',
-          link: '<p>Poznań, Poland</p>',
+          link: '<p>Minsk, Belarus</p>',
           isUnderline: false,
         }
       ],
       socials: [
-        {
-          id:'instagram',
-          name: 'Instagram',
-          icon: '/assets/aside/instagram.svg',
-          link: `<a href='https://www.instagram.com/it.wwwoman'>@it.wwwoman</a>`
-        },
         {
           id:'github',
           name: 'Github',
@@ -158,31 +119,9 @@ export default {
           id:'polish',
           name: 'Polish',
           icon: '/assets/aside/polish.png',
-          info: 'Intermediate'
+          info: 'Elementary'
         }
-      ],
-      hobbies:[
-        {
-          id:'teaching',
-          name: 'Teaching',
-          icon: '/assets/aside/gaming.svg',
-        },
-        {
-          id:'travelling',
-          name: 'Travelling',
-          icon: '/assets/aside/travelling.svg',
-        },
-        {
-          id:'blogging',
-          name: 'Blogging',
-          icon: '/assets/aside/blogging.svg',
-        },
-      ],
-      productionDetails: {
-          'Mother’s Name': 'Tatyana Yarosh',
-          'Father’s Name': 'Sergey Yarosh',
-          'D.O.B.': '23 - 04 - 1996',
-      }
+      ]
     };
   },
 };
