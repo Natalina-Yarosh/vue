@@ -83,13 +83,20 @@ export default {
           linkPath: 'https://regal-paprenjak-594723.netlify.app/',
           linkName: 'Show project',
         },
-        
          {
           id: 'project8',
           image: '/assets/tools/react.png',
           name: 'Pexels',
           description: 'Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures.',
           linkPath: 'https://natalina-yarosh.github.io/pexels/#/',
+          linkName: 'Show project',
+        },
+         {
+          id: 'project9',
+          image: '/assets/tools/vue.png',
+          name: 'Monster Slayer',
+          description: 'Game',
+          linkPath: 'https://starlit-selkie-7a9291.netlify.app/',
           linkName: 'Show project',
         },
       ],
